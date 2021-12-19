@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import com.example.mystic.Model.User
@@ -18,15 +19,18 @@ class SignUpActivity : AppCompatActivity() {
 
     val TAG = SignUpActivity::class.qualifiedName
 
-    val fullNameText = findViewById<EditText>(R.id.fullNameText)
-    val emailText = findViewById<EditText>(R.id.emailText)
-    val passwordText = findViewById<EditText>(R.id.passwordText)
 
-    val signUpBtn = findViewById<MaterialButton>(R.id.signupBtn)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_sign_up)
+
+        var fullNameText = findViewById<EditText>(R.id.fullNameText)
+        var emailText = findViewById<EditText>(R.id.emailText)
+        var passwordText = findViewById<EditText>(R.id.passwordText)
+
+        val signUpBtn = findViewById<MaterialButton>(R.id.signupBtn)
 
         signUpBtn.setOnClickListener {
             var fullName = fullNameText.text.toString()
