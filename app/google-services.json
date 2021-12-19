@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794434788944",
+    "project_id": "mystic-d154c",
+    "storage_bucket": "mystic-d154c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794434788944:android:a897211add5586da80fb55",
+        "android_client_info": {
+          "package_name": "com.example.mystic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794434788944-vuj44geo5sce0cvejnenf5h41pu8f8nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnDL6JL7QI4LeMLyFGoB4IFoTz0vZr84o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794434788944-vuj44geo5sce0cvejnenf5h41pu8f8nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
