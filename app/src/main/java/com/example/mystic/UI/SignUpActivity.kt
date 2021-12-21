@@ -64,7 +64,7 @@ class SignUpActivity : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance();
 
        val user = HashMap<String, User>();
-        val userInfo = User(fullName, email, password)
+        val userInfo = User(fullName, email)
         user.set("user", userInfo)
 
         db.collection("Users")

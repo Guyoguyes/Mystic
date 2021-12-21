@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.example.mystic.R
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,11 +17,25 @@ class MainActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
 
+        val auth = FirebaseAuth.getInstance();
+
         Handler(Looper.getMainLooper()).postDelayed({
-            Intent(this, SignUpActivity::class.java).also {
-                startActivity(it);
-                finish()
-            }
+//            if(auth.currentUser != null){
+//                Intent(this, HomeActivity::class.java).also {
+//                    startActivity(it);
+//                    finish()
+//                }
+//            }else{
+//                Intent(this, SignUpActivity::class.java).also {
+//                    startActivity(it);
+//                    finish()
+//                }
+//            }
+            Intent(this, LogInActivity::class.java).also {
+                   startActivity(it);
+                    finish()
+               }
+
         }, SPLASHTIMER.toLong())
     }
 }

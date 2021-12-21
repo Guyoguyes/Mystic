@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
+        android:fontFamily="@font/bungee"
         android:text="Sign Up"
         android:textColor="@color/white"
         android:textSize="28sp"
@@ -56,7 +57,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="40dp"
                     android:id="@+id/fullNameText"/>
 
             </com.google.android.material.textfield.TextInputLayout>
