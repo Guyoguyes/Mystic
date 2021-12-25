@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 //                    finish()
 //                }
 //            }
-            Intent(this, LogInActivity::class.java).also {
+            Intent(this, SignUpActivity::class.java).also {
                    startActivity(it);
                     finish()
                }
