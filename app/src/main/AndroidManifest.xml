@@ -13,15 +13,18 @@
         android:theme="@style/Theme.Mystic">
         <activity
             android:name=".UI.LogInActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".UI.SignUpActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".UI.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".UI.MainActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
