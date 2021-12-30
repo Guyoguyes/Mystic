@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".UI.HomeActivity">
 
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolBarId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_baseline_account_circle_24"
+            iccc
+            app:title="@string/app_name"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white"
+            app:menu="@menu/toolbarmenu"/>
+
+
+
+
     <TextView
         android:id="@+id/fullname"
         android:layout_width="wrap_content"
