@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mystic">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mystic">
         <activity
-            android:name=".UI.LogInActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:name=".UI.LeagueDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".UI.LogInActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
             android:name=".UI.SignUpActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".UI.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".UI.MainActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

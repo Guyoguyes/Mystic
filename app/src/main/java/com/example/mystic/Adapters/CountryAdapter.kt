@@ -2,55 +2,53 @@ package com.example.mystic.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatDrawableManager.get
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mystic.Model.Country
-import com.example.mystic.databinding.CountryBinding
-import com.squareup.picasso.Picasso
-import java.lang.reflect.Array.get
+import com.bumptech.glide.Glide
+import com.example.mystic.Model.Response
+import com.example.mystic.R
+import kotlinx.android.synthetic.main.country_list.view.*
 
-class CountryAdapter(val context: Context): RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
-
-
-    class ViewHolder(val binding: CountryBinding): RecyclerView.ViewHolder(binding.root) {
+class CountryAdapter: RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+    class CountryViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     }
 
-    private val diffCallback = object : DiffUtil.ItemCallback<Country>(){
-        override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
-            return oldItem.name == newItem.name
+
+    private val diffCallback = object : DiffUtil.ItemCallback<Response>(){
+        override fun areItemsTheSame(oldItem: Response, newItem: Response): Boolean {
+            return oldItem.code == newItem.code
         }
 
-        override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
+        override fun areContentsTheSame(oldItem: Response, newItem: Response): Boolean {
             return oldItem == newItem
         }
 
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)
-    var countries: List<Country>
-        get() = differ.currentList
-        set(value) {differ.submitList(value)}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(CountryBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent, false
-        ))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
+       return CountryViewHolder(
+           LayoutInflater.from(parent.context).inflate(
+               R.layout.country_list, parent, false
+           )
+       )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.apply {
-            val country = countries[position]
+    override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
+        val country = differ.currentList[position]
+        holder.itemView.apply {
+            Glide.with(this).load(country.flag).into(countryFlag)
             countryName.text = country.name
-            Picasso.with(context).load(country.flag).into(countryFlag)
+            totalLeague.text = country.code
         }
     }
 
     override fun getItemCount(): Int {
-        return countries.size
+        return differ.currentList.size
     }
 }
